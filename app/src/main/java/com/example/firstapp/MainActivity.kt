@@ -3,19 +3,19 @@ package com.example.firstapp
 import android.content.res.ColorStateList
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Debug
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.DrawableCompat
+import androidx.fragment.app.add
+import androidx.fragment.app.commit
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.firstapp.databinding.DetailsTabSummaryBinding
-import com.example.firstapp.databinding.ListBinding
-import com.example.firstapp.databinding.ListItemBinding
-import com.example.firstapp.databinding.NutritionalFactsBinding
+import com.example.firstapp.databinding.*
 import kotlinx.android.synthetic.main.details_tab_summary.view.*
 
 class MainActivity : AppCompatActivity() {
@@ -23,9 +23,19 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         // Utiliser le layout nutritional_facts
-        val binding = ListBinding.inflate(layoutInflater)
+       // val binding = ProductDetailsFragmentBinding.inflate(layoutInflater)
+        //val view = binding.root
+        //setContentView(view)
+        val binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+
+        if (savedInstanceState == null) {
+            supportFragmentManager.commit {
+                setReorderingAllowed(true)
+                add<ProductDetailsFragment>(R.id.product_details_nav_host)
+            }
+        }
 
         // Récupérer nutritional_facts_item_fat
 //        binding.nutritionalFactsItemFat.nutritionalFactsItemText.text = "0.8g de Matières grasses"
@@ -53,52 +63,7 @@ class MainActivity : AppCompatActivity() {
 
 
 */
-
-
-        val products = listOf(
-            Product(
-                nom = "Nom du produit 1",
-                marque = "Marque du produit",
-                list_additif = "aucune",
-                code_barres = "029388383838",
-                list_ingredients = listOf("Ingr1", "Ingr2"),
-                list_pays_vendu = "France",
-                list_substance = "Aucune",
-                url_image = "https://www.aprifel.com/wp-content/uploads/2019/02/carotte.jpg",
-                quantite = "20g",
-                nutriscores = "E"
-
-            ),
-            Product(
-                nom = "Nom du produit 1",
-                marque = "Marque du produit",
-                list_additif = "aucune",
-                code_barres = "029388383838",
-                list_ingredients = listOf("Ingr1", "Ingr2"),
-                list_pays_vendu = "France",
-                list_substance = "Aucune",
-                url_image = "https://www.aprifel.com/wp-content/uploads/2019/02/carotte.jpg",
-                quantite = "20g",
-                nutriscores = "F"
-
-            ),
-            Product(
-            nom = "Nom du produit 1",
-            marque = "Marque du produit",
-            list_additif = "aucune",
-            code_barres = "029388383838",
-            list_ingredients = listOf("Ingr1", "Ingr2"),
-            list_pays_vendu = "France",
-            list_substance = "Aucune",
-            url_image = "https://www.aprifel.com/wp-content/uploads/2019/02/carotte.jpg",
-            quantite = "20g",
-            nutriscores = "F"
-
-        )
-        )
-
-        binding.recyclerView.layoutManager = LinearLayoutManager(this)
-        binding.recyclerView.adapter = ListAdapter(products)
+        Debug.startMethodTracing("sample")
 
     }
 }

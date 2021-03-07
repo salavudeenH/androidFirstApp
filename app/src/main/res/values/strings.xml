@@ -5,4 +5,7 @@
     <string name="nutritional_facts_gras">%1$s de d\'acides gras saturés \n %2%s</string>
     <string name="nutritional_facts_sugars">%1$s de sucres\n%2%s</string>
     <string name="nutritional_facts_salt">%1$s de sel\n%2%s</string>
+    <string name="fiche">fiche</string>
+    <string name="nutrition">nutrition</string>
+    <string name="tableau">tableau</string>
 </resources>
