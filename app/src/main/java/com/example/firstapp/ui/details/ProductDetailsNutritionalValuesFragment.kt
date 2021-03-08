@@ -1,16 +1,14 @@
-package com.example.firstapp
+package com.example.firstapp.ui.details
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.firstapp.databinding.ProductDetailsSummaryFragmentBinding
+import com.example.firstapp.databinding.ProductDetailsNutritionalValuesBinding
 
-
-class ProductDetailsSummaryFragment : Fragment() {
-
-    private lateinit var binding: ProductDetailsSummaryFragmentBinding
+class ProductDetailsNutritionalValuesFragment : Fragment() {
+    private lateinit var binding: ProductDetailsNutritionalValuesBinding
 
     // Equivalent du setContentView
     override fun onCreateView(
@@ -18,7 +16,7 @@ class ProductDetailsSummaryFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = ProductDetailsSummaryFragmentBinding.inflate(layoutInflater)
+        binding = ProductDetailsNutritionalValuesBinding.inflate(layoutInflater)
         return binding.root
     }
 
@@ -26,4 +24,4 @@ class ProductDetailsSummaryFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
     }
-    }
+}
