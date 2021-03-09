@@ -8,4 +8,5 @@
     <string name="fiche">fiche</string>
     <string name="nutrition">nutrition</string>
     <string name="tableau">tableau</string>
+    <string name="scan_product">Scanner un code barre</string>
 </resources>

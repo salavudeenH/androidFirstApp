@@ -26,8 +26,8 @@ class ProductDetailsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val navHost = childFragmentManager.findFragmentById(R.id.product_details_nav_host) as NavHostFragment
-        NavigationUI.setupWithNavController(binding.productDetailsBottomNav, navHost.navController)
+        //val navHost = childFragmentManager.findFragmentById(R.id.product_details_nav_host) as NavHostFragment
+        //NavigationUI.setupWithNavController(binding.productDetailsBottomNav, navHost.navController)
     }
 
 }
